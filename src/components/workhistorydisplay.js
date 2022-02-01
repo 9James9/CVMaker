@@ -20,7 +20,7 @@ export function WorkHistoryDisplay({ history }) {
 
   return (
     <div>
-      <h2>Hello Workhistorydisplay</h2>
+      <h2>Work History</h2>
       <button onClick={logCompany}>Click me</button>
       {logCompany()}
       {companies.map((i,x) => {
