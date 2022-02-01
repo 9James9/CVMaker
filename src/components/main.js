@@ -7,6 +7,7 @@ export function Main() {
     const [name, setName] = useState('')
     const [job, setJob] = useState([])
     const [history, setHistory] = useState({jobs: ''})
+    const [jobDisplay, setJobDisplay] = useState([])
     const updateName = e => {
         setName(e.target.value)
     }
@@ -23,11 +24,15 @@ export function Main() {
             }
         }))
     }
+    const onAddBtnClick = e => {
+        setJobDisplay(jobDisplay.concat(<JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount} key={jobDisplay.length}/>))
+    }
     let jobCount = 1
     const calculateIndex = () => {
         console.log('called')
         return jobCount += 1
     }
+
     return (
         <div className='container'>
             <div className='input-container'>
@@ -50,6 +55,8 @@ export function Main() {
                 <div className='job-history-container'>
                     <p>Job</p>
                     <p>{console.log(history)}</p>
+                    <button onClick={onAddBtnClick}>Click me</button>
+                    {jobDisplay}
                 </div>
             </div>
         </div>
