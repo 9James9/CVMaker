@@ -3,6 +3,8 @@ import { PersonalInput } from "./inputs/personalinput";
 import { useState } from "react";
 import { JobInput } from "./inputs/jobinput";
 import { JobHistoryInput } from "./inputs/workhistoryinput";
+import { WorkHistoryDisplay } from './workhistorydisplay'
+
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState([]);
@@ -17,7 +19,6 @@ export function Main() {
   const updateJobHistory = (e,h) => {
     const indexia = jobDisplay.length;
     setHistory((prevState) => ({
-      ...prevState,
       jobs: {
         ...prevState.jobs,
         [indexia]: {
@@ -30,7 +31,6 @@ export function Main() {
 
   const updateJobHistoryStart = e => {
       setHistory((prevState) => ({
-          ...prevState,
           jobs: {
               ...prevState.jobs,
               [jobDisplay.length]: {
@@ -43,7 +43,6 @@ export function Main() {
 
   const updateJobHistoryEnd = e => {
       setHistory((prevState) => ({
-          ...prevState,
           jobs: {
               ...prevState.jobs,
               [jobDisplay.length]: {
@@ -66,17 +65,6 @@ export function Main() {
     );
   };
 
-  const showHistory = ({history}) => {
-    return (
-        <div>
-            {
-                Object.entries(history).map(([key, val]) => {
-                    <p key={key}>{key}: {val}</p>
-                })
-            }
-        </div>
-    )
-  }
   return (
     <div className="container">
       <div className="input-container">
@@ -96,9 +84,10 @@ export function Main() {
         </div>
         <div className="job-history-container">
           <p>Job</p>
-          {/* <p>{console.log(history.jobs[0,0].Company == undefined ? history.jobs[0,0].Company : 'hello')}</p> */}
           <p>Company name: {history.jobs && history.jobs[0].Company}</p>
-          <p></p>
+          <WorkHistoryDisplay history={history}/>
+          {console.log(history.jobs)}
+          {console.log(Object.keys(history.jobs).length)}
         </div>
       </div>
     </div>
