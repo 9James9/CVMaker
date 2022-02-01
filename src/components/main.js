@@ -14,21 +14,38 @@ export function Main() {
   const updateJobTitle = (e) => {
     setJob(e.target.value);
   };
-  const updateJobHistory = (e) => {
+  const updateJobHistory = (e,h) => {
     const indexia = jobDisplay.length;
     setHistory((prevState) => ({
       ...prevState,
       jobs: {
         ...prevState.jobs,
-        [indexia]: e.target.value,
+        [indexia]: {
+            ...prevState.jobs[indexia],
+            Company: e.target.value,
+        },
       },
     }));
   };
+
+  const updateJobHistoryStart = e => {
+      setHistory((prevState) => ({
+          ...prevState,
+          jobs: {
+              ...prevState.jobs,
+              [jobDisplay.length]: {
+                  ...prevState.jobs[jobDisplay.length],
+                  Start: e.target.value
+              }
+          }
+      }))
+  }
   const onAddBtnClick = (e) => {
     setJobDisplay(
       jobDisplay.concat(
         <JobHistoryInput
           updateJobHistory={updateJobHistory}
+          updateJobHistoryStart={updateJobHistoryStart}
           key={jobDisplay.length}
         />
       )
