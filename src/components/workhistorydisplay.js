@@ -21,10 +21,9 @@ export function WorkHistoryDisplay({ history }) {
   return (
     <div>
       <h2>Work History</h2>
-      <button onClick={logCompany}>Click me</button>
       {logCompany()}
       {companies.map((i,x) => {
-          return (<div key={x}>{i}{`Start Date: ${startDates[x]}`}{`End Date: ${endDates[x]}`}
+          return (<div key={x}>{i}<br></br>{`Start Date: ${startDates[x]}`}<br></br>{(`End Date: ${endDates[x]}`)}
           </div>)
       })}
     </div>
