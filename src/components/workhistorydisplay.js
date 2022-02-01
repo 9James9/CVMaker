@@ -23,8 +23,11 @@ export function WorkHistoryDisplay({ history }) {
       <h2>Work History</h2>
       {logCompany()}
       {companies.map((i,x) => {
-          return (<div key={x}>{i}<br></br>{`Start Date: ${startDates[x]}`}<br></br>{(`End Date: ${endDates[x]}`)}
-          </div>)
+          return (
+              <div key={x}>
+                  {}
+              </div>
+          )
       })}
     </div>
   );
