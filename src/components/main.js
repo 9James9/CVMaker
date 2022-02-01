@@ -23,15 +23,20 @@ export function Main() {
             }
         }))
     }
+    let jobCount = 1
     const calculateIndex = () => {
-        return 1
+        console.log('called')
+        return jobCount += 1
     }
     return (
         <div className='container'>
             <div className='input-container'>
                 <PersonalInput setName={updateName}/>
                 <JobInput updateJobTitle={updateJobTitle}/>
-                <JobHistoryInput updateJobHistory={updateJobHistory} count={1}/>
+                <JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount}/>
+                <button onClick={() => {
+                    return <JobHistoryInput updateJobHistory={updateJobHistory} count={calculateIndex}
+                />}}>Add Job</button>
             </div>
             <div className='output-container'>
                 <div className='name-container'>
