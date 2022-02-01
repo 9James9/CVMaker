@@ -5,7 +5,6 @@ export function WorkHistoryDisplay({ history }) {
     let startDates = []
     let endDates = []
     function logCompany() {
-
             for (let i = 0; i < Object.keys(history.jobs).length; i++) {
                 console.log(history.jobs[i].Company)
                     companies.push(`${history.jobs[i].Company}`)
