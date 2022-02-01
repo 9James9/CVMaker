@@ -40,12 +40,26 @@ export function Main() {
           }
       }))
   }
+
+  const updateJobHistoryEnd = e => {
+      setHistory((prevState) => ({
+          ...prevState,
+          jobs: {
+              ...prevState.jobs,
+              [jobDisplay.length]: {
+                  ...prevState.jobs[jobDisplay.length],
+                  End: e.target.value
+              }
+          }
+      }))
+  }
   const onAddBtnClick = (e) => {
     setJobDisplay(
       jobDisplay.concat(
         <JobHistoryInput
           updateJobHistory={updateJobHistory}
           updateJobHistoryStart={updateJobHistoryStart}
+          updateJobHistoryEnd={updateJobHistoryEnd}
           key={jobDisplay.length}
         />
       )
