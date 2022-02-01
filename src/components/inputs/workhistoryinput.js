@@ -1,7 +1,7 @@
 import React from 'react';
 
-export function JobHistoryInput ({updateJobHistory,calcIndex,count,key}) {
+export function JobHistoryInput ({updateJobHistory,calcIndex,count}) {
         return(
-            <input type="text" key={key} placeholder='Company Name' onChange={(e,index) => {updateJobHistory(e,count)}}/>
+            <input type="text" placeholder='Company Name' onChange={(e) => {updateJobHistory(e,count)}}/>
         )
 }

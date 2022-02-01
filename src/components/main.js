@@ -15,7 +15,7 @@ export function Main() {
         setJob(e.target.value)
     }
     const updateJobHistory = (e,index) => {
-        const indexia = index
+        const indexia = jobDisplay.length
         setHistory((prevState,index) => ({
             ...prevState,
             jobs: {
@@ -34,7 +34,9 @@ export function Main() {
             <div className='input-container'>
                 <PersonalInput setName={updateName}/>
                 <JobInput updateJobTitle={updateJobTitle}/>
-                <JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount}/>
+                {/* <JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount} key={0}/> */}
+                <button onClick={onAddBtnClick}>Add work experience</button>
+                {jobDisplay}
             </div>
             <div className='output-container'>
                 <div className='name-container'>
@@ -48,8 +50,8 @@ export function Main() {
                 <div className='job-history-container'>
                     <p>Job</p>
                     <p>{console.log(history)}</p>
-                    <button onClick={onAddBtnClick}>Click me</button>
-                    {jobDisplay}
+
+
                 </div>
             </div>
         </div>
