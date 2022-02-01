@@ -86,8 +86,6 @@ export function Main() {
           <p>Job</p>
           <p>Company name: {history.jobs && history.jobs[0].Company}</p>
           <WorkHistoryDisplay history={history}/>
-          {console.log(history.jobs)}
-          {console.log(Object.keys(history.jobs).length)}
         </div>
       </div>
     </div>
