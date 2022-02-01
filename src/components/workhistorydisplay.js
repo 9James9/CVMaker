@@ -13,6 +13,9 @@ export function WorkHistoryDisplay({ history }) {
             for (let i = 0; i < Object.keys(history.jobs).length; i++) {
                 startDates.push(`${history.jobs[i].Start}`)
             }
+            for (let i = 0; i < Object.keys(history.jobs).length; i++) {
+                endDates.push(`${history.jobs[i].End}`)
+            }
     }
 
   return (
@@ -21,7 +24,7 @@ export function WorkHistoryDisplay({ history }) {
       <button onClick={logCompany}>Click me</button>
       {logCompany()}
       {companies.map((i,x) => {
-          return (<div key={x}>{i}{`Start Date: ${startDates[x]}`}
+          return (<div key={x}>{i}{`Start Date: ${startDates[x]}`}{`End Date: ${endDates[x]}`}
           </div>)
       })}
     </div>
