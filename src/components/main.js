@@ -28,10 +28,6 @@ export function Main() {
         setJobDisplay(jobDisplay.concat(<JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount} key={jobDisplay.length}/>))
     }
     let jobCount = 1
-    const calculateIndex = () => {
-        console.log('called')
-        return jobCount += 1
-    }
 
     return (
         <div className='container'>
@@ -39,9 +35,6 @@ export function Main() {
                 <PersonalInput setName={updateName}/>
                 <JobInput updateJobTitle={updateJobTitle}/>
                 <JobHistoryInput updateJobHistory={updateJobHistory} count={jobCount}/>
-                <button onClick={() => {
-                    return <JobHistoryInput updateJobHistory={updateJobHistory} count={calculateIndex}
-                />}}>Add Job</button>
             </div>
             <div className='output-container'>
                 <div className='name-container'>
