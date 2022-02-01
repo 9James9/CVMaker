@@ -53,7 +53,7 @@ export function Main() {
           }
       }))
   }
-  const onAddBtnClick = (e) => {
+  const onAddBtnClick = () => {
     setJobDisplay(
       jobDisplay.concat(
         <JobHistoryInput
