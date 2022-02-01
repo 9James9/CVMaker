@@ -97,7 +97,7 @@ export function Main() {
         <div className="job-history-container">
           <p>Job</p>
           {/* <p>{console.log(history.jobs[0,0].Company == undefined ? history.jobs[0,0].Company : 'hello')}</p> */}
-          <p>Company name: {history.jobs && history.jobs[0,0].Company}</p>
+          <p>Company name: {history.jobs && history.jobs[0].Company}</p>
           <p></p>
         </div>
       </div>
