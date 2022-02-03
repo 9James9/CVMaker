@@ -5,8 +5,9 @@ const EducationHistoryDisplay = ({educationHistory}) => {
     function processData() {
         names = []
         for (let i = 0; i < Object.keys(educationHistory.Education).length; i++) {
-            names.push(educationHistory.Education[i].Name)
-            console.log(educationHistory.Education[i].Name)
+
+                names.push(educationHistory.Education[i]?.Name)
+            
         }
     }
   return (
