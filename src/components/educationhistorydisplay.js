@@ -15,7 +15,7 @@ console.log(Object.keys(educationHistory.Education).length)
         {processData()}
         {names.map((x,i) => {
             return(
-                <div key={x} className='educationhistory-display'>
+                <div key={i} className='educationhistory-display'>
                     <p>School: {names[i]}</p>
                 </div>
             )

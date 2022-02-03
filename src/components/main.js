@@ -46,9 +46,15 @@ export function Main() {
     }))
     console.log(educationHistory)
   }
-
+  const uniqueKey = () => {
+    return new Date().getTime().toString()
+  } 
   const addEducationClick = e => {
-    setEducationDisplay(educationDisplay.concat(<EducationInput key={educationDisplay.length} updateEducationHistoryName={updateEducationHistoryName}/>))
+    setEducationDisplay(educationDisplay.concat(<EducationInput key={uniqueKey()} updateEducationHistoryName={updateEducationHistoryName}/>))
+  }
+
+  const removeEducationClick = e => {
+    setEducationDisplay(educationDisplay.slice(0,-1))
   }
   const updateJobHistoryStart = e => {
       setHistory((prevState) => ({
@@ -89,6 +95,7 @@ export function Main() {
   return (
     <div className="container">
       <div className="input-container">
+        <button onClick={removeEducationClick}>Click me</button>
         <PersonalInput setName={updateName} />
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
