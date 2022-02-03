@@ -8,8 +8,6 @@ const EducationHistoryDisplay = ({educationHistory}) => {
             names.push(educationHistory.Education[i].Name)
             console.log(educationHistory.Education[i].Name)
         }
-
-console.log(Object.keys(educationHistory.Education).length)
     }
   return (
   <div>
