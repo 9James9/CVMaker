@@ -2,8 +2,8 @@ import React from "react";
 import { PersonalInput } from "./inputs/personalinput";
 import { useState } from "react";
 import { JobInput } from "./inputs/jobinput";
-import { JobHistoryInput } from "./inputs/workhistoryinput";
-import { WorkHistoryDisplay } from "./workhistorydisplay";
+import { JobHistoryInput } from "./inputs/Work/workhistoryinput";
+import { WorkHistoryDisplay } from "./inputs/workhistorydisplay";
 import EducationInput from "./inputs/Education/educationinput";
 import EducationHistoryDisplay from "./educationhistorydisplay";
 export function Main() {
