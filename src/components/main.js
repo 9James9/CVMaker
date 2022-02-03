@@ -10,6 +10,7 @@ export function Main() {
   const [job, setJob] = useState([]);
   const [history, setHistory] = useState({ jobs: "" });
   const [jobDisplay, setJobDisplay] = useState([]);
+  const [disabledBtn, setDisabledBtn] = useState(false)
   const updateName = (e) => {
     setName(e.target.value);
   };
