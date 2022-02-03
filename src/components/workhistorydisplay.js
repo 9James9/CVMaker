@@ -5,14 +5,17 @@ export function WorkHistoryDisplay({ history }) {
     let startDates = []
     let endDates = []
     function logCompany() {
+        companies = []
+        startDates = []
+        endDates = []
             for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-                    companies.push(`${history.jobs[i].Company}`)
+                    companies.push(`${history.jobs[i]?.Company}`)
             }
             for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-                startDates.push(`${history.jobs[i].Start}`)
+                startDates.push(`${history.jobs[i]?.Start}`)
             }
             for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-                endDates.push(`${history.jobs[i].End}`)
+                endDates.push(`${history.jobs[i]?.End}`)
             }
     }
 
@@ -24,13 +27,13 @@ export function WorkHistoryDisplay({ history }) {
           return (
               <div key={x} className="workhistory-container">
                   <div className="workhistory-company">
-                      <p>Worked at {companies[x]}</p>
+                      <p>{companies[x] !== 'undefined' ? `Worked at: ${companies[x]}` : ''}</p>
                   </div>
                   <div className="workhistory-start">
-                      <p>Start: {startDates[x]}</p>
+                      <p>{startDates[x] !== 'undefined' ? `Start Date: ${startDates[x]}` : ''}</p>
                   </div>
                   <div className="workhistory-end">
-                      <p>End: {endDates[x]}</p>
+                      <p>{endDates[x] !== 'undefined' ? `Ended on: ${endDates[x]}` : ''}</p>
                   </div>
               </div>
           )

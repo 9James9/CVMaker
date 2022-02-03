@@ -67,6 +67,20 @@ export function Main() {
       }
     }))
   }
+
+  const removeWorkClick = e => {
+    setJobDisplay(jobDisplay.slice(0,-1))
+    setHistory((prevState) => ({
+      jobs: {
+        ...prevState.jobs,
+        [jobDisplay.length -1]: {
+          Company: 'undefined',
+          Start: 'undefined',
+          End: 'undefined'
+        }
+      }
+    }))
+  }
   const updateJobHistoryStart = e => {
       setHistory((prevState) => ({
           jobs: {
@@ -110,6 +124,7 @@ export function Main() {
         <PersonalInput setName={updateName} />
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
+        <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
         <button onClick={addEducationClick}>Add Education</button>
         <button disabled={!deleteBtn} onClick={removeEducationClick}>Delete education</button>
