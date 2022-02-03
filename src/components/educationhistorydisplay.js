@@ -3,10 +3,12 @@ import React from 'react';
 const EducationHistoryDisplay = ({educationHistory}) => {
     let names = []
     function processData() {
+        names = []
         for (let i = 0; i < Object.keys(educationHistory.Education).length; i++) {
             names.push(educationHistory.Education[i].Name)
             console.log(educationHistory.Education[i].Name)
         }
+
 console.log(Object.keys(educationHistory.Education).length)
     }
   return (
@@ -16,7 +18,7 @@ console.log(Object.keys(educationHistory.Education).length)
         {names.map((x,i) => {
             return(
                 <div key={i} className='educationhistory-display'>
-                    <p>School: {names[i]}</p>
+                    <p>{names[i] == 'undefined' ? '' : `School:  ${names[i]}`}</p>
                 </div>
             )
         })}

@@ -55,6 +55,14 @@ export function Main() {
 
   const removeEducationClick = e => {
     setEducationDisplay(educationDisplay.slice(0,-1))
+    setEducationHistory((prevState) => ({
+      Education: {
+        ...prevState.Education,
+        [educationDisplay.length -1]: {
+          Name: 'undefined'
+        }
+      }
+    }))
   }
   const updateJobHistoryStart = e => {
       setHistory((prevState) => ({
