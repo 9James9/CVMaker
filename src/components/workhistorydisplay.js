@@ -23,17 +23,17 @@ export function WorkHistoryDisplay({ history }) {
     <div>
       <h2>Work History</h2>
       {logCompany()}
-      {companies.map((i,x) => {
+      {companies.map((x,i) => {
           return (
-              <div key={x} className="workhistory-container">
+              <div key={i} className="workhistory-container">
                   <div className="workhistory-company">
-                      <p>{companies[x] !== 'undefined' ? `Worked at: ${companies[x]}` : ''}</p>
+                      <p>{companies[i] !== 'undefined' ? `Worked at: ${companies[i]}` : ''}</p>
                   </div>
                   <div className="workhistory-start">
-                      <p>{startDates[x] !== 'undefined' ? `Start Date: ${startDates[x]}` : ''}</p>
+                      <p>{startDates[i] !== 'undefined' ? `Start Date: ${startDates[i]}` : ''}</p>
                   </div>
                   <div className="workhistory-end">
-                      <p>{endDates[x] !== 'undefined' ? `Ended on: ${endDates[x]}` : ''}</p>
+                      <p>{endDates[i] !== 'undefined' ? `Ended on: ${endDates[i]}` : ''}</p>
                   </div>
               </div>
           )

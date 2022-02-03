@@ -6,7 +6,7 @@ const EducationHistoryDisplay = ({educationHistory}) => {
         names = []
         for (let i = 0; i < Object.keys(educationHistory.Education).length; i++) {
 
-                names.push(educationHistory.Education[i]?.Name)
+                names.push(`${educationHistory.Education[i]?.Name}`)
             
         }
     }
@@ -17,7 +17,7 @@ const EducationHistoryDisplay = ({educationHistory}) => {
         {names.map((x,i) => {
             return(
                 <div key={i} className='educationhistory-display'>
-                    <p>{names[i] == 'undefined' ? '' : `School:  ${names[i]}`}</p>
+                    <p>{names[i] !== 'undefined' ? `Studied at: ${names[i]}`: ''}</p>
                 </div>
             )
         })}

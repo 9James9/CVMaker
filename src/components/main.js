@@ -13,8 +13,7 @@ export function Main() {
   const [jobDisplay, setJobDisplay] = useState([]);
   const [educationHistory, setEducationHistory] = useState({Education:""})
   const [educationDisplay, setEducationDisplay] = useState([])
-  const [deleteBtn, setDeleteBtn] = React.useState(false)
-  const toggle = React.useCallback(() => setDeleteBtn(true))
+
   const updateName = (e) => {
     setName(e.target.value);
   };
@@ -53,7 +52,6 @@ export function Main() {
   } 
   const addEducationClick = e => {
     setEducationDisplay(educationDisplay.concat(<EducationInput key={uniqueKey()} updateEducationHistoryName={updateEducationHistoryName}/>))
-    toggle()
   }
 
   const removeEducationClick = e => {
@@ -127,7 +125,7 @@ export function Main() {
         <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
         <button onClick={addEducationClick}>Add Education</button>
-        <button disabled={!deleteBtn} onClick={removeEducationClick}>Delete education</button>
+        <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
       </div>
       <div className="output-container">
