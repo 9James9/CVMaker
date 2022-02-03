@@ -1,6 +1,6 @@
 import React from "react";
 
-export function WorkHistoryDisplay({ history }) {
+export function WorkHistoryDisplay({ workHistory }) {
   let companies = [];
   let startDates = [];
   let endDates = [];
@@ -8,14 +8,14 @@ export function WorkHistoryDisplay({ history }) {
     companies = [];
     startDates = [];
     endDates = [];
-    for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-      companies.push(`${history.jobs[i]?.Company}`);
+    for (let i = 0; i < Object.keys(workHistory.jobs).length; i++) {
+      companies.push(`${workHistory.jobs[i]?.Company}`);
     }
-    for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-      startDates.push(`${history.jobs[i]?.Start}`);
+    for (let i = 0; i < Object.keys(workHistory.jobs).length; i++) {
+      startDates.push(`${workHistory.jobs[i]?.Start}`);
     }
-    for (let i = 0; i < Object.keys(history.jobs).length; i++) {
-      endDates.push(`${history.jobs[i]?.End}`);
+    for (let i = 0; i < Object.keys(workHistory.jobs).length; i++) {
+      endDates.push(`${workHistory.jobs[i]?.End}`);
     }
   }
 

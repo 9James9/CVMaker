@@ -9,7 +9,7 @@ import EducationHistoryDisplay from "./educationhistorydisplay";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState([]);
-  const [history, setHistory] = useState({ jobs: "" });
+  const [workHistory, setHistory] = useState({ jobs: "" });
   const [jobDisplay, setJobDisplay] = useState([]);
   const [educationHistory, setEducationHistory] = useState({ Education: "" });
   const [educationDisplay, setEducationDisplay] = useState([]);
@@ -31,7 +31,7 @@ export function Main() {
         },
       },
     }));
-    console.log(history);
+    console.log(workHistory);
   };
   const updateEducationHistoryName = (e) => {
     let index = educationDisplay.length;
@@ -141,8 +141,8 @@ export function Main() {
           <p>Title</p>
           <p>{job}</p>
         </div>
-        <div className="job-history-container">
-          <WorkHistoryDisplay history={history} />
+        <div className="job-workHistory-container">
+          <WorkHistoryDisplay workHistory={workHistory} />
         </div>
         <EducationHistoryDisplay educationHistory={educationHistory} />
       </div>
