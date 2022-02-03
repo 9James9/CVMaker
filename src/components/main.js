@@ -1,11 +1,11 @@
 import React from "react";
 import { PersonalInput } from "./inputs/personalinput";
 import { useState } from "react";
-import { JobInput } from "./inputs/jobinput";
+import { JobInput } from "./inputs/Work/jobinput";
 import { JobHistoryInput } from "./inputs/Work/workhistoryinput";
-import { WorkHistoryDisplay } from "./inputs/workhistorydisplay";
+import { WorkHistoryDisplay } from "./Displays/Work/workhistorydisplay";
 import EducationInput from "./inputs/Education/educationinput";
-import EducationHistoryDisplay from "./educationhistorydisplay";
+import EducationHistoryDisplay from "./Displays/Education/educationhistorydisplay";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState([]);
