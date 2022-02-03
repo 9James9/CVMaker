@@ -103,12 +103,13 @@ export function Main() {
   return (
     <div className="container">
       <div className="input-container">
-        <button onClick={removeEducationClick}>Click me</button>
+
         <PersonalInput setName={updateName} />
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
         {jobDisplay}
         <button onClick={addEducationClick}>Add Education</button>
+        <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
       </div>
       <div className="output-container">
