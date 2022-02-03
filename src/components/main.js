@@ -4,13 +4,15 @@ import { useState } from "react";
 import { JobInput } from "./inputs/jobinput";
 import { JobHistoryInput } from "./inputs/workhistoryinput";
 import { WorkHistoryDisplay } from './workhistorydisplay'
-
+import EducationInput from "./inputs/Education/educationinput";
+import EducationHistoryDisplay from "./educationhistorydisplay";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState([]);
   const [history, setHistory] = useState({ jobs: "" });
   const [jobDisplay, setJobDisplay] = useState([]);
-  const [disabledBtn, setDisabledBtn] = useState(false)
+  const [educationHistory, setEducationHistory] = useState({Education:""})
+  const [educationDisplay, setEducationDisplay] = useState([])
   const updateName = (e) => {
     setName(e.target.value);
   };
@@ -28,8 +30,26 @@ export function Main() {
         },
       },
     }));
+    console.log(history)
   };
+  const updateEducationHistoryName = e => {
+    let index = educationDisplay.length
+    setEducationHistory((prevState) => ({
 
+      Education: {
+        ...prevState.Education,
+        [index]: {
+          Name: e.target.value
+        }
+      }
+
+    }))
+    console.log(educationHistory)
+  }
+
+  const addEducationClick = e => {
+    setEducationDisplay(educationDisplay.concat(<EducationInput key={educationDisplay.length} updateEducationHistoryName={updateEducationHistoryName}/>))
+  }
   const updateJobHistoryStart = e => {
       setHistory((prevState) => ({
           jobs: {
@@ -73,6 +93,8 @@ export function Main() {
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
         {jobDisplay}
+        <button onClick={addEducationClick}>Add Education</button>
+        {educationDisplay}
       </div>
       <div className="output-container">
         <div className="name-container">
@@ -86,6 +108,7 @@ export function Main() {
         <div className="job-history-container">
           <WorkHistoryDisplay history={history}/>
         </div>
+        <EducationHistoryDisplay educationHistory={educationHistory}/>
       </div>
     </div>
   );
