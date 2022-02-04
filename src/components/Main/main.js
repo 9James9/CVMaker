@@ -105,6 +105,19 @@ export function Main() {
       }
     }))
   }
+
+  const updateEducationHistoryMajor = e => {
+    let index = educationDisplay.length
+    setEducationHistory((prevState) => ({
+      Education: {
+        ...prevState.Education,
+        [index]: {
+          ...prevState.Education[index],
+          Major: e.target.value
+        }
+      }
+    }))
+  }
   const uniqueKey = () => {
     return new Date().getTime().toString();
   };
@@ -115,6 +128,7 @@ export function Main() {
           key={uniqueKey()}
           updateEducationHistoryGpa={updateEducationHistoryGpa}
           updateEducationHistoryName={updateEducationHistoryName}
+          updateEducationHistoryMajor={updateEducationHistoryMajor}
         />
       )
     );
