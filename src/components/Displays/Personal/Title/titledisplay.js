@@ -3,7 +3,7 @@ import './titledisplay.css'
 
 const TitleDisplay = ({title}) => {
   return (
-      <div>{title ? title : 'Title'}</div>
+      <div className='titledisplay__container'>{title ? title : 'Title'}</div>
   );
 };
 

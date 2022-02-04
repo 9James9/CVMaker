@@ -3,7 +3,7 @@ import './namedisplay.css'
 
 const NameDisplay = ({name}) => {
   return (
-      <div>{name ? name : 'First Last'}</div>
+      <div className='namedisplay__container'>{name ? name : 'First Last'}</div>
   );
 };
 
