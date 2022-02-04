@@ -11,6 +11,8 @@ import NameDisplay from "../Displays/Personal/Name/namedisplay";
 import TitleDisplay from "../Displays/Personal/Title/titledisplay";
 import ContactDisplay from "../Displays/Contact/contactdisplay";
 import Contactinput from "../Inputs/Contact/contactinput";
+import SkillsInput from "../Inputs/Personal/Skills/skillsinput";
+import SkillsDisplay from "../Displays/Personal/Skills/skillsdisplay";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -20,6 +22,25 @@ export function Main() {
   const [educationDisplay, setEducationDisplay] = useState([]);
   const [phone, setPhone] = useState()
   const [email, setEmail] = useState('')
+  const [skills, setSkills] = useState({ skills: ""})
+  const [skillsInputs, setSkillsInputs] = useState([])
+  
+  const updateSkill = e => {
+    setSkills((prevState) => ({
+      skills: {
+        ...prevState.skills,
+        [skillsInputs.length]: {
+          skill: e.target.value
+        }
+      }
+    }))
+    console.log(skills)
+  }
+
+  const addSkillsInput = e => {
+    setSkillsInputs(skillsInputs.concat(<SkillsInput key={skillsInputs.length} updateSkill={updateSkill}/>))
+  }
+
   
   const updateEmail = e => {
     setEmail(e.target.value)
@@ -145,7 +166,10 @@ export function Main() {
         <button onClick={addEducationClick}>Add Education</button>
         <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
+        <button onClick={addSkillsInput}>Add skill</button>
+        {skillsInputs}
       </div>
+
       <div className="output-container">
         <NameDisplay name={name} />
         <TitleDisplay title={job} />
@@ -154,6 +178,7 @@ export function Main() {
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
         <EducationHistoryDisplay educationHistory={educationHistory} />
+        <SkillsDisplay/>
       </div>
     </div>
   );

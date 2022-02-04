@@ -1,10 +1,10 @@
 import React from 'react';
 import './skillsinput.css'
 
-const SkillsInput = () => {
+const SkillsInput = ({updateSkill}) => {
   return (
       <div className='skillsinput__container'>
-          <h5>Hello skillsinput</h5>
+          <input placeholder='Skill' onChange={updateSkill}></input>
       </div>
   );
 };
