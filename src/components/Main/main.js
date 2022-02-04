@@ -178,7 +178,7 @@ export function Main() {
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
         <EducationHistoryDisplay educationHistory={educationHistory} />
-        <SkillsDisplay/>
+        <SkillsDisplay skills={skills}/>
       </div>
     </div>
   );
