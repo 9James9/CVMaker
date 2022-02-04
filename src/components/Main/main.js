@@ -1,11 +1,11 @@
 import React from "react";
 import "./main.css";
-import { PersonalInput } from "../inputs/Personal/personalinput";
+import { PersonalInput } from "../Inputs/Personal/personalinput";
 import { useState } from "react";
-import { JobInput } from "../inputs/Work/jobinput";
-import { JobHistoryInput } from "../inputs/Work/workhistoryinput";
+import { JobInput } from "../Inputs/Work/jobinput";
+import { JobHistoryInput } from "../Inputs/Work/workhistoryinput";
 import { WorkHistoryDisplay } from "../Displays/Work/workhistorydisplay";
-import EducationInput from "../inputs/Education/educationinput";
+import EducationInput from "../Inputs/Education/educationinput";
 import EducationHistoryDisplay from "../Displays/Education/educationhistorydisplay";
 import NameDisplay from "../Displays/Personal/Name/namedisplay";
 import TitleDisplay from "../Displays/Personal/Title/titledisplay";

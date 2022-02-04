@@ -3,9 +3,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
-
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .input-container {
+        width: 500px !important;
+    }
+}
+@media (max-width: 700px) {
+    .input-container {
+        width: 300px !important;
+    }
+}
 .input-container {
   display: flex;
   flex-direction: column;
@@ -14,8 +26,7 @@
   border: 5px solid black;
   border-radius: 5px;
   padding: 10px;
-  min-width: 500px;
-  max-width: 750px;
+  width: 700px;
   background-color: #bdeaee;
 }
 
@@ -24,7 +35,9 @@ input {
   padding: 10px;
   margin: 10px 5px;
 }
-
+.output-container {
+    margin-left: 20px;
+}
 button {
   display: inline-block;
   padding: 0.3em 1.2em;
