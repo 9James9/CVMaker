@@ -10,12 +10,18 @@
         flex-direction: column;
     }
     .input-container {
-        width: 500px !important;
+        width: 700px !important;
+    }
+    .output-container {
+      width: 500px;
     }
 }
 @media (max-width: 700px) {
     .input-container {
         width: 350px !important;
+    }
+    .output-container {
+      width: 350px !important;
     }
 }
 .input-container {
