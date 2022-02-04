@@ -4,8 +4,8 @@ export function JobHistoryInput ({updateJobHistory,updateJobHistoryStart,updateJ
         return(
             <div className='workhistoryinput__container'>
             <input type="text" placeholder='Company Name' onChange={(e) => {updateJobHistory(e)}}/>
-            <input type="number" placeholder='Start Date' onChange={((e) => {updateJobHistoryStart(e)})}/>
-            <input type="number" placeholder="End Date" onChange={((e) => {updateJobHistoryEnd(e)})}/>
+            <input type="text" placeholder='Start Date' onChange={((e) => {updateJobHistoryStart(e)})}/>
+            <input type="text" placeholder="End Date" onChange={((e) => {updateJobHistoryEnd(e)})}/>
             </div>
 
         )

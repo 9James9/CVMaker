@@ -49,7 +49,7 @@ const ProjectDisplay = ({ projects }) => {
                 ? `Name: ${projectNames[i]}`
                 : ''}
             </p>
-            <p>{projectDescriptions[i] !== '' && projectDescriptions[i] !== 'undefined' ? `Description: ${projectDescriptions[i]}` : ''}</p>
+            <p className="projectdisplay__description">{projectDescriptions[i] !== '' && projectDescriptions[i] !== 'undefined' ? `Description: ${projectDescriptions[i]}` : ''}</p>
             <p>{projectExtras[i] !== '' && projectExtras[i] !== 'undefined' ? `More info: ${projectExtras[i]}` : ''}</p>
           </div>
         );
