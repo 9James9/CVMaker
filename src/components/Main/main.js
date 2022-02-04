@@ -1,5 +1,5 @@
 import React from "react";
-import './main.css'
+import "./main.css";
 import { PersonalInput } from "../inputs/Personal/personalinput";
 import { useState } from "react";
 import { JobInput } from "../inputs/Work/jobinput";
@@ -7,9 +7,11 @@ import { JobHistoryInput } from "../inputs/Work/workhistoryinput";
 import { WorkHistoryDisplay } from "../Displays/Work/workhistorydisplay";
 import EducationInput from "../inputs/Education/educationinput";
 import EducationHistoryDisplay from "../Displays/Education/educationhistorydisplay";
+import NameDisplay from "../Displays/Personal/Name/namedisplay";
+import TitleDisplay from "../Displays/Personal/Title/titledisplay";
 export function Main() {
   const [name, setName] = useState("");
-  const [job, setJob] = useState([]);
+  const [job, setJob] = useState("");
   const [workHistory, setHistory] = useState({ jobs: "" });
   const [jobDisplay, setJobDisplay] = useState([]);
   const [educationHistory, setEducationHistory] = useState({ Education: "" });
@@ -134,14 +136,8 @@ export function Main() {
         {educationDisplay}
       </div>
       <div className="output-container">
-        <div className="name-container">
-          <p>Name:</p>
-          <p>{name}</p>
-        </div>
-        <div className="job-container">
-          <p>Title</p>
-          <p>{job}</p>
-        </div>
+        <NameDisplay name={name} />
+        <TitleDisplay title={job} />
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
