@@ -1,6 +1,7 @@
 .header__container {
-    background-color: #12bbaa;
+    background-color: #5e5656;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #ebf4f6
 }

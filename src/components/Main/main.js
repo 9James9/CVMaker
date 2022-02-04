@@ -1,4 +1,5 @@
 import React from "react";
+import './main.css'
 import { PersonalInput } from "../inputs/Personal/personalinput";
 import { useState } from "react";
 import { JobInput } from "../inputs/Work/jobinput";
