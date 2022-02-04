@@ -18,8 +18,12 @@ export function Main() {
   const [jobDisplay, setJobDisplay] = useState([]);
   const [educationHistory, setEducationHistory] = useState({ Education: "" });
   const [educationDisplay, setEducationDisplay] = useState([]);
-  const [phone, setPhone] = useState('')
-
+  const [phone, setPhone] = useState()
+  const [email, setEmail] = useState('')
+  
+  const updateEmail = e => {
+    setEmail(e.target.value)
+  }
   const updatePhone = e => {
     setPhone(e.target.value)
   }
@@ -133,7 +137,7 @@ export function Main() {
     <div className="container">
       <div className="input-container">
         <PersonalInput setName={updateName} />
-        <Contactinput updatePhone={updatePhone}/>
+        <Contactinput updatePhone={updatePhone} updateEmail={updateEmail}/>
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
         <button onClick={removeWorkClick}>Delete work experience</button>
@@ -145,7 +149,7 @@ export function Main() {
       <div className="output-container">
         <NameDisplay name={name} />
         <TitleDisplay title={job} />
-        <ContactDisplay phone={phone}/>
+        <ContactDisplay phone={phone} email={email}/>
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
