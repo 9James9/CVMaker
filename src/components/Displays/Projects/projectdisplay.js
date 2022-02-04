@@ -12,7 +12,7 @@ const ProjectDisplay = ({projects}) => {
   return (
       <div className='projectdisplay__container'>
           {handleData()}
-          <h3>{projectNames.length > 0 ? 'Projects' : ''}</h3>
+          <h3>{projectNames[0] && projectNames[0] !== 'undefined' && projectNames[0] !== '' ? 'Projects' : ''}</h3>
           {projectNames.map((x,i) => {
               return (
                   <p key={i}>{projectNames[i] !== '' && projectNames[i] !== 'undefined' ? `${projectNames[i]}` : ''}</p>

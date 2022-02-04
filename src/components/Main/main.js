@@ -41,16 +41,17 @@ export function Main() {
       }
     }))
   }
-  const deleteProjectInput = e => {
-    setProjectInputs(projectInputs.slice(0,-1))
+  const deleteProjectInputName = e => {
+
     setProjects((prevState) => ({
       projects: {
         ...prevState.projects,
-        [projectInputs.length -1]: {
-          project: ''
+        [projectInputs.length]: {
+          Name: ''
         }
       }
     }))
+    setProjectInputs(projectInputs.slice(0,-1))
   }
   const addProjectInput = e => {
     setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length} updateProjectInputName={updateProjectInputName}/>))
@@ -66,15 +67,16 @@ export function Main() {
     }))
   }
   const removeSkill = e => {
-    setSkillsInputs(skillsInputs.slice(0,-1))
     setSkills((prevState) => ({
       skills: {
         ...prevState.skills,
-        [skillsInputs.length -1]: {
+        [skillsInputs.length]: {
           skill: ''
         } 
       }
     }))
+    setSkillsInputs(skillsInputs.slice(0,-1))
+    console.log(skillsInputs)
   }
   const addSkillsInput = e => {
     setSkillsInputs(skillsInputs.concat(<SkillsInput key={skillsInputs.length} updateSkill={updateSkill}/>))
@@ -234,7 +236,7 @@ export function Main() {
         <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
         <button onClick={addProjectInput}>Add project</button>
-        <button onClick={deleteProjectInput}>Delete project</button>
+        <button onClick={deleteProjectInputName}>Delete project</button>
         {projectInputs}
         <button onClick={addEducationClick}>Add Education</button>
         <button onClick={removeEducationClick}>Delete education</button>
