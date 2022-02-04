@@ -1,10 +1,11 @@
 import React from 'react';
 import './projectinput.css'
 
-const ProjectInput = () => {
+const ProjectInput = ({updateProjectInputName}) => {
+
   return (
       <div className='projectinput__container'>
-          Hello projectinput
+          <input placeholder='Project Name' onChange={e => {updateProjectInputName(e)}}></input>
       </div>
   );
 };

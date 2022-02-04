@@ -31,6 +31,16 @@ export function Main() {
   const [projects, setProjects] = useState({ projects: ""})
   const [projectInputs, setProjectInputs] = useState([])
 
+  const updateProjectInputName = e => {
+    setProjects((prevState) => ({
+      projects: {
+        ...prevState.projects,
+        [projectInputs.length]: {
+          Name: e.target.value
+        }
+      }
+    }))
+  }
   const deleteProjectInput = e => {
     setProjectInputs(projectInputs.slice(0,-1))
     setProjects((prevState) => ({
@@ -43,7 +53,7 @@ export function Main() {
     }))
   }
   const addProjectInput = e => {
-    setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length}/>))
+    setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length} updateProjectInputName={updateProjectInputName}/>))
   }
   const updateSkill = e => {
     setSkills((prevState) => ({
@@ -242,7 +252,7 @@ export function Main() {
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
-        <ProjectDisplay/>
+        <ProjectDisplay projects={projects}/>
         <EducationHistoryDisplay educationHistory={educationHistory} />
         <SkillsDisplay skills={skills}/>
       </div>
