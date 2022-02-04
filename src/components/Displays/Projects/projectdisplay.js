@@ -11,23 +11,23 @@ const ProjectDisplay = ({ projects }) => {
     projectExtras = [];
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
       if (projects.projects[i]?.Name === undefined) {
-          projectNames[i] = ''
+          projectNames.push('undefined')
       } else {
-        projectNames[i] = (projects.projects[i]?.Name);
+        projectNames.push(projects.projects[i].Name);
       }
     }
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
       if (projects.projects[i]?.Description === undefined) {
-        projectDescriptions[i] = ('')
+        projectDescriptions.push('undefined')
     } else {
-      projectDescriptions[i] = (projects.projects[i]?.Description);
+      projectDescriptions.push(projects.projects[i]?.Description);
     }
     }
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
       if (projects.projects[i]?.Extra === undefined) {
-        projectExtras[i] = ('')
+        projectExtras.push('undefined')
     } else {
-      projectExtras[i] = (projects.projects[i]?.Extra);
+      projectExtras.push(projects.projects[i]?.Extra);
     }
     }
   };

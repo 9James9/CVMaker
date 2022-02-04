@@ -66,7 +66,7 @@ export function Main() {
     }))
   }
   const deleteProjectInput = e => {
-    let index = projectInputs.length > 1 ? projectInputs.length : 0
+    let index = projectInputs.length == 1 ? projectInputs.length : 0
     setProjectInputs(projectInputs.slice(0,-1))
     setProjects((prevState) => ({
       projects: {
