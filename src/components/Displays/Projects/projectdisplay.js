@@ -10,13 +10,25 @@ const ProjectDisplay = ({ projects }) => {
     projectDescriptions = [];
     projectExtras = [];
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
-      projectNames.push(projects.projects[i]?.Name);
+      if (projects.projects[i]?.Name === undefined) {
+          projectNames[i] = ''
+      } else {
+        projectNames[i] = (projects.projects[i]?.Name);
+      }
     }
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
-      projectDescriptions.push(projects.projects[i]?.Description);
+      if (projects.projects[i]?.Description === undefined) {
+        projectDescriptions[i] = ('')
+    } else {
+      projectDescriptions[i] = (projects.projects[i]?.Description);
+    }
     }
     for (let i = 0; i < Object.keys(projects.projects).length; i++) {
-      projectExtras.push(projects.projects[i]?.Extra);
+      if (projects.projects[i]?.Extra === undefined) {
+        projectExtras[i] = ('')
+    } else {
+      projectExtras[i] = (projects.projects[i]?.Extra);
+    }
     }
   };
   return (
@@ -37,7 +49,6 @@ const ProjectDisplay = ({ projects }) => {
                 ? `Name: ${projectNames[i]}`
                 : ''}
             </p>
-            {}
             <p>{projectDescriptions[i] !== '' && projectDescriptions[i] !== 'undefined' ? `Description: ${projectDescriptions[i]}` : ''}</p>
             <p>{projectExtras[i] !== '' && projectExtras[i] !== 'undefined' ? `More info: ${projectExtras[i]}` : ''}</p>
           </div>
