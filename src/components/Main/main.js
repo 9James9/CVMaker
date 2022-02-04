@@ -9,6 +9,8 @@ import EducationInput from "../Inputs/Education/educationinput";
 import EducationHistoryDisplay from "../Displays/Education/educationhistorydisplay";
 import NameDisplay from "../Displays/Personal/Name/namedisplay";
 import TitleDisplay from "../Displays/Personal/Title/titledisplay";
+import ContactDisplay from "../Displays/Contact/contactdisplay";
+import Contactinput from "../Inputs/Contact/contactinput";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -16,7 +18,11 @@ export function Main() {
   const [jobDisplay, setJobDisplay] = useState([]);
   const [educationHistory, setEducationHistory] = useState({ Education: "" });
   const [educationDisplay, setEducationDisplay] = useState([]);
+  const [phone, setPhone] = useState('')
 
+  const updatePhone = e => {
+    setPhone(e.target.value)
+  }
   const updateName = (e) => {
     setName(e.target.value);
   };
@@ -127,6 +133,7 @@ export function Main() {
     <div className="container">
       <div className="input-container">
         <PersonalInput setName={updateName} />
+        <Contactinput updatePhone={updatePhone}/>
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
         <button onClick={removeWorkClick}>Delete work experience</button>
@@ -138,6 +145,7 @@ export function Main() {
       <div className="output-container">
         <NameDisplay name={name} />
         <TitleDisplay title={job} />
+        <ContactDisplay phone={phone}/>
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
