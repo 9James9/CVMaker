@@ -34,9 +34,18 @@ export function Main() {
         }
       }
     }))
-    console.log(skills)
   }
-
+  const removeSkill = e => {
+    setSkillsInputs(skillsInputs.slice(0,-1))
+    setSkills((prevState) => ({
+      skills: {
+        ...prevState.skills,
+        [skillsInputs.length -1]: {
+          skill: ''
+        } 
+      }
+    }))
+  }
   const addSkillsInput = e => {
     setSkillsInputs(skillsInputs.concat(<SkillsInput key={skillsInputs.length} updateSkill={updateSkill}/>))
   }
@@ -167,6 +176,7 @@ export function Main() {
         <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
         <button onClick={addSkillsInput}>Add skill</button>
+        <button onClick={removeSkill}>Delete Skill</button>
         {skillsInputs}
       </div>
 

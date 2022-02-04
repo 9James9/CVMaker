@@ -6,16 +6,15 @@ const SkillsDisplay = ({skills}) => {
   const handleData = () => {
     skillArray = []
     for (let i = 0; i < Object.keys(skills.skills).length; i++) {
-      skillArray.push(`${skills.skills[i].skill}`)
-      console.log(skills[i])
+      skillArray.push(`${skills.skills[i]?.skill}`)
     }
   }
   return (
       <div>
-          <h3>Skills</h3>
+          <h3>Skills:</h3>
           {handleData()}
           {skillArray.map((x,i) => {
-            return <p key={i}>{x}</p>
+            return x !== 'undefined' ? <p key={i}>{x}</p> : ''
           })}
       </div>
   );
