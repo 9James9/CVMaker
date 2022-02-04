@@ -1,4 +1,5 @@
 import React from "react";
+import './educationhistoryinput.css'
 
 const EducationHistoryDisplay = ({ educationHistory }) => {
   let names = [];

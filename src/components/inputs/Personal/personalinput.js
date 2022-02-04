@@ -1,4 +1,5 @@
 import React from 'react';
+import './personalinput.css';
 
 export function PersonalInput({setName}) {
     return(

@@ -1,5 +1,5 @@
 import React from "react";
-import { PersonalInput } from "./inputs/personalinput";
+import { PersonalInput } from "./inputs/Personal/personalinput";
 import { useState } from "react";
 import { JobInput } from "./inputs/Work/jobinput";
 import { JobHistoryInput } from "./inputs/Work/workhistoryinput";

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './workhistoryinput.css'
 export function JobHistoryInput ({updateJobHistory,updateJobHistoryStart,updateJobHistoryEnd}) {
         return(
             <div>

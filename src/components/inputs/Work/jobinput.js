@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './jobinput.css'
 export function JobInput({updateJobTitle}) {
     return(
         <div>
