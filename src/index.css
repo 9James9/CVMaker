@@ -1,14 +1,6 @@
 html body {
     box-sizing: border-box;
     height: 100vh;
-    display: grid;
-    place-items: center;
+    margin: 0;
 }
 
-.app-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid blue;
-    padding: 20px;
-}

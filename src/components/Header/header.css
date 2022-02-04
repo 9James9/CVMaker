@@ -1,0 +1,6 @@
+.header__container {
+    background-color: #12bbaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
