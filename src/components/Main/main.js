@@ -14,6 +14,8 @@ import Contactinput from "../Inputs/Contact/contactinput";
 import SkillsInput from "../Inputs/Personal/Skills/skillsinput";
 import SkillsDisplay from "../Displays/Personal/Skills/skillsdisplay";
 import GithubDisplay from "../Displays/Personal/githubdisplay";
+import ProjectDisplay from "../Displays/Projects/projectdisplay";
+import ProjectInput from "../Inputs/Projects/projectinput";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -26,6 +28,23 @@ export function Main() {
   const [skills, setSkills] = useState({ skills: ""})
   const [skillsInputs, setSkillsInputs] = useState([])
   const [github, setGithub] = useState('')
+  const [projects, setProjects] = useState({ projects: ""})
+  const [projectInputs, setProjectInputs] = useState([])
+
+  const deleteProjectInput = e => {
+    setProjectInputs(projectInputs.slice(0,-1))
+    setProjects((prevState) => ({
+      projects: {
+        ...prevState.projects,
+        [projectInputs.length -1]: {
+          project: ''
+        }
+      }
+    }))
+  }
+  const addProjectInput = e => {
+    setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length}/>))
+  }
   const updateSkill = e => {
     setSkills((prevState) => ({
       skills: {
@@ -204,6 +223,9 @@ export function Main() {
         <button onClick={onAddBtnClick}>Add work experience</button>
         <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
+        <button onClick={addProjectInput}>Add project</button>
+        <button onClick={deleteProjectInput}>Delete project</button>
+        {projectInputs}
         <button onClick={addEducationClick}>Add Education</button>
         <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
@@ -220,6 +242,7 @@ export function Main() {
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
+        <ProjectDisplay/>
         <EducationHistoryDisplay educationHistory={educationHistory} />
         <SkillsDisplay skills={skills}/>
       </div>
