@@ -82,12 +82,26 @@ export function Main() {
       Education: {
         ...prevState.Education,
         [index]: {
+          ...prevState.Education[index],
           Name: e.target.value,
         },
       },
     }));
     console.log(educationHistory);
   };
+
+  const updateEducationHistoryGpa = e => {
+    let index = educationDisplay.length
+    setEducationHistory((prevState) => ({
+      Education: {
+        ...prevState.Education,
+        [index]: {
+          ...prevState.Education[index],
+          Gpa: e.target.value
+        }
+      }
+    }))
+  }
   const uniqueKey = () => {
     return new Date().getTime().toString();
   };
@@ -96,6 +110,7 @@ export function Main() {
       educationDisplay.concat(
         <EducationInput
           key={uniqueKey()}
+          updateEducationHistoryGpa={updateEducationHistoryGpa}
           updateEducationHistoryName={updateEducationHistoryName}
         />
       )
