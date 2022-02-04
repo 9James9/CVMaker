@@ -1,5 +1,4 @@
 import React from "react";
-import EducationInput from "../../Inputs/Education/educationinput";
 import './educationhistoryinput.css'
 
 const EducationHistoryDisplay = ({ educationHistory }) => {
