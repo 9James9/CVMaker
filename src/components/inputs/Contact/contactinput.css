@@ -3,3 +3,8 @@
     align-items: center;
     justify-content: center;
 }
+@media (max-width: 700px) {
+    .contactinput__container {
+        flex-direction: column;
+    }
+}

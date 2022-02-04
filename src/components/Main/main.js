@@ -13,6 +13,7 @@ import ContactDisplay from "../Displays/Contact/contactdisplay";
 import Contactinput from "../Inputs/Contact/contactinput";
 import SkillsInput from "../Inputs/Personal/Skills/skillsinput";
 import SkillsDisplay from "../Displays/Personal/Skills/skillsdisplay";
+import GithubDisplay from "../Displays/Personal/githubdisplay";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -24,7 +25,7 @@ export function Main() {
   const [email, setEmail] = useState('')
   const [skills, setSkills] = useState({ skills: ""})
   const [skillsInputs, setSkillsInputs] = useState([])
-  
+  const [github, setGithub] = useState('')
   const updateSkill = e => {
     setSkills((prevState) => ({
       skills: {
@@ -50,7 +51,9 @@ export function Main() {
     setSkillsInputs(skillsInputs.concat(<SkillsInput key={skillsInputs.length} updateSkill={updateSkill}/>))
   }
 
-  
+  const updateGithub = e => {
+    setGithub(e.target.value)
+  }
   const updateEmail = e => {
     setEmail(e.target.value)
   }
@@ -182,7 +185,7 @@ export function Main() {
     <div className="container">
       <div className="input-container">
         <PersonalInput setName={updateName} />
-        <Contactinput updatePhone={updatePhone} updateEmail={updateEmail}/>
+        <Contactinput updatePhone={updatePhone} updateEmail={updateEmail} updateGithub={updateGithub}/>
         <JobInput updateJobTitle={updateJobTitle} />
         <button onClick={onAddBtnClick}>Add work experience</button>
         <button onClick={removeWorkClick}>Delete work experience</button>
@@ -199,6 +202,7 @@ export function Main() {
         <NameDisplay name={name} />
         <TitleDisplay title={job} />
         <ContactDisplay phone={phone} email={email}/>
+        <GithubDisplay github={github}/>
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
