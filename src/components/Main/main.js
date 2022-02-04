@@ -31,30 +31,56 @@ export function Main() {
   const [projects, setProjects] = useState({ projects: ""})
   const [projectInputs, setProjectInputs] = useState([])
 
+  const updateProjectInputDesc = e => {
+    setProjects((prevState) => ({
+      projects: {
+        ...prevState.projects,
+        [projectInputs.length]: {
+          ...prevState.projects[projectInputs.length],
+          Description: e.target.value
+        }
+      }
+    }))
+  }
+
+  const updateProjectInputExtra = e => {
+    setProjects((prevState) => ({
+      projects: {
+        ...prevState.projects,
+        [projectInputs.length]: {
+          ...prevState.projects[projectInputs.length],
+          Extra: e.target.value
+        }
+      }
+    }))
+  }
   const updateProjectInputName = e => {
     setProjects((prevState) => ({
       projects: {
         ...prevState.projects,
         [projectInputs.length]: {
+          ...prevState.projects[projectInputs.length],
           Name: e.target.value
         }
       }
     }))
   }
-  const deleteProjectInputName = e => {
+  const deleteProjectInput = e => {
 
     setProjects((prevState) => ({
       projects: {
         ...prevState.projects,
         [projectInputs.length]: {
-          Name: ''
+          Name: '',
+          Description: '',
+          Extra: ''
         }
       }
     }))
     setProjectInputs(projectInputs.slice(0,-1))
   }
   const addProjectInput = e => {
-    setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length} updateProjectInputName={updateProjectInputName}/>))
+    setProjectInputs(projectInputs.concat(<ProjectInput key={projectInputs.length} updateProjectInputName={updateProjectInputName} updateProjectInputDesc={updateProjectInputDesc} updateProjectInputExtra={updateProjectInputExtra}/>))
   }
   const updateSkill = e => {
     setSkills((prevState) => ({
@@ -236,7 +262,7 @@ export function Main() {
         <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
         <button onClick={addProjectInput}>Add project</button>
-        <button onClick={deleteProjectInputName}>Delete project</button>
+        <button onClick={deleteProjectInput}>Delete project</button>
         {projectInputs}
         <button onClick={addEducationClick}>Add Education</button>
         <button onClick={removeEducationClick}>Delete education</button>
