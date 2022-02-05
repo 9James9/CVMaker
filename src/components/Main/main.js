@@ -272,7 +272,7 @@ export function Main() {
         <button onClick={addSkillsInput}>Add skill</button>
         <button onClick={removeSkill}>Delete Skill</button>
         {skillsInputs}
-        <PdfMaker name={name} job={job} email={email} phone={phone} github={github}/>
+        <PdfMaker name={name} job={job} email={email} phone={phone} github={github} workHistory={workHistory}/>
       </div>
 
       <div className="output-container">
