@@ -2,10 +2,9 @@ import jsPDF from 'jspdf';
 import React from 'react';
 
 const PdfMaker = ({name,job,email,phone, github}) => {
-    const saveState = () => {
-        
-    }
+
     const makeDoc = e => {
+
         let doc = new jsPDF()
         doc.setFontSize(48)
         doc.text(20, 20, `${name}`)
@@ -21,7 +20,6 @@ const PdfMaker = ({name,job,email,phone, github}) => {
   return (
       <div>
           <h2>Hello JSPDF</h2>
-          <button onClick={saveState}>Submit</button>
           <button onClick={makeDoc}>Save PDF</button>
       </div>
   );
