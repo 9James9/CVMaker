@@ -16,6 +16,7 @@ import SkillsDisplay from "../Displays/Personal/Skills/skillsdisplay";
 import GithubDisplay from "../Displays/Personal/githubdisplay";
 import ProjectDisplay from "../Displays/Projects/projectdisplay";
 import ProjectInput from "../Inputs/Projects/projectinput";
+import PdfMaker from "../Pdf/pdfmaker";
 export function Main() {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -271,6 +272,7 @@ export function Main() {
         <button onClick={addSkillsInput}>Add skill</button>
         <button onClick={removeSkill}>Delete Skill</button>
         {skillsInputs}
+        <PdfMaker/>
       </div>
 
       <div className="output-container">
