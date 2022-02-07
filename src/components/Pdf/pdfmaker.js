@@ -134,7 +134,7 @@ const PdfMaker = ({
       doc.setFontSize(18)
       doc.text(150,70 + (10 * i),skillArray[i])
     }
-    doc.save(`deletethis69.pdf`);
+    doc.save(`${name.split(' ')[0]}resume.pdf`);
   };
   return (
     <div className="jspdf__container">
