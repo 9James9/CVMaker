@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/CVMaker/static/css/main.87a47c47.css",
-    "main.js": "/CVMaker/static/js/main.95a450d0.js",
+    "main.js": "/CVMaker/static/js/main.7ef96671.js",
     "static/js/498.681dffa6.chunk.js": "/CVMaker/static/js/498.681dffa6.chunk.js",
     "static/js/703.e5e2cce3.chunk.js": "/CVMaker/static/js/703.e5e2cce3.chunk.js",
     "static/js/314.04b478aa.chunk.js": "/CVMaker/static/js/314.04b478aa.chunk.js",
     "index.html": "/CVMaker/index.html",
     "main.87a47c47.css.map": "/CVMaker/static/css/main.87a47c47.css.map",
-    "main.95a450d0.js.map": "/CVMaker/static/js/main.95a450d0.js.map",
+    "main.7ef96671.js.map": "/CVMaker/static/js/main.7ef96671.js.map",
     "498.681dffa6.chunk.js.map": "/CVMaker/static/js/498.681dffa6.chunk.js.map",
     "703.e5e2cce3.chunk.js.map": "/CVMaker/static/js/703.e5e2cce3.chunk.js.map",
     "314.04b478aa.chunk.js.map": "/CVMaker/static/js/314.04b478aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87a47c47.css",
-    "static/js/main.95a450d0.js"
+    "static/js/main.7ef96671.js"
   ]
 }
