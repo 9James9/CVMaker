@@ -263,12 +263,12 @@ export function Main() {
         <button onClick={onAddBtnClick}>Add work experience</button>
         <button onClick={removeWorkClick}>Delete work experience</button>
         {jobDisplay}
-        <button onClick={addProjectInput}>Add project</button>
-        <button onClick={deleteProjectInput}>Delete project</button>
-        {projectInputs}
         <button onClick={addEducationClick}>Add Education</button>
         <button onClick={removeEducationClick}>Delete education</button>
         {educationDisplay}
+        <button onClick={addProjectInput}>Add project</button>
+        <button onClick={deleteProjectInput}>Delete project</button>
+        {projectInputs}
         <button onClick={addSkillsInput}>Add skill</button>
         <button onClick={removeSkill}>Delete Skill</button>
         {skillsInputs}
@@ -283,8 +283,8 @@ export function Main() {
         <div className="job-workHistory-container">
           <WorkHistoryDisplay workHistory={workHistory} />
         </div>
-        <ProjectDisplay projects={projects}/>
         <EducationHistoryDisplay educationHistory={educationHistory} />
+        <ProjectDisplay projects={projects}/>
         <SkillsDisplay skills={skills}/>
       </div>
     </div>
