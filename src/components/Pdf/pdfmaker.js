@@ -60,7 +60,7 @@ const PdfMaker = ({name,job,email,phone, github,workHistory, educationHistory}) 
         }
         // education history
         doc.setFontSize(32)
-        let companyEnd = (companies.length * 20) + 90
+        let companyEnd = (companies.length * 20) + 80
         doc.text(20, (companyEnd), 'Education')
         for (let i = 0; i < names.length; i++) {
             doc.setFontSize(24)
@@ -69,8 +69,8 @@ const PdfMaker = ({name,job,email,phone, github,workHistory, educationHistory}) 
             doc.text(60, companyEnd + 10 + (i * 40 || 10), `GPA: ${gpas[i]}`)
             doc.text(90, companyEnd + 10 + (i * 40 || 10), `Major: ${majors[i]}`)
         }
-
-
+        let educationEnd = companyEnd + (names.length * 20) + 20
+        doc.text(20, educationEnd, 'Hello educactionaofsj')
         doc.save(`deletethis69.pdf`)
     }
   return (
