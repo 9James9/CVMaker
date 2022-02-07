@@ -1,6 +1,6 @@
 import jsPDF from "jspdf";
 import React from "react";
-
+import './pdfmaker.css';
 const PdfMaker = ({
   name,
   job,
@@ -10,6 +10,7 @@ const PdfMaker = ({
   workHistory,
   educationHistory,
   projects,
+  skills,
 }) => {
   let companies = [];
   let startDates = [];
@@ -74,10 +75,18 @@ const PdfMaker = ({
       }
     }
   };
+  let skillArray = []
+  const handleSkillData = () => {
+    skillArray = []
+    for (let i = 0; i < Object.keys(skills.skills).length; i++) {
+      skillArray.push(`${skills.skills[i]?.skill}`)
+    }
+  }
   const makeDoc = (e) => {
     logCompany();
     processData();
     handleData();
+    handleSkillData();
     let doc = new jsPDF();
 
     doc.setFontSize(48);
@@ -118,11 +127,18 @@ const PdfMaker = ({
       doc.text(30, educationEnd + 10 + (i * 40 || 10), `Description: ${projectDescriptions[i]}`);
       doc.text(30, educationEnd + 20 + (i * 40 || 10), `Extra Information: ${projectExtras[i]}`);
     }
+
+    doc.setFontSize(32)
+    doc.text(150,60,'Skills')
+    for (let i = 0; i < skillArray.length; i++) {
+      doc.setFontSize(18)
+      doc.text(150,70 + (10 * i),skillArray[i])
+    }
     doc.save(`deletethis69.pdf`);
   };
   return (
-    <div>
-      <h2>Hello JSPDF</h2>
+    <div className="jspdf__container">
+      <h2>Make a PDF</h2>
       <button onClick={makeDoc}>Save PDF</button>
     </div>
   );
