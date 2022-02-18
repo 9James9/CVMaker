@@ -118,6 +118,7 @@ const PdfMaker = ({
       doc.text(90, companyEnd + 10 + (i * 40 || 10), `Major: ${majors[i]}`);
     }
     let educationEnd = companyEnd + (names.length * 20) + 50;
+    //project history
     doc.setFontSize(32);
     doc.text(20, educationEnd, "Projects:");
     for (let i = 0 ; i < projectNames.length; i++) {
@@ -127,14 +128,14 @@ const PdfMaker = ({
       doc.text(30, educationEnd + 10 + (i * 40 || 10), `Description: ${projectDescriptions[i]}`);
       doc.text(30, educationEnd + 20 + (i * 40 || 10), `Extra Information: ${projectExtras[i]}`);
     }
-
+    //skills history
     doc.setFontSize(32)
     doc.text(150,60,'Skills')
     for (let i = 0; i < skillArray.length; i++) {
       doc.setFontSize(18)
       doc.text(150,70 + (10 * i),skillArray[i])
     }
-    doc.save(`${name.split(' ')[0]}resume.pdf`);
+    doc.save(`${name.split(' ')[0]}_resume.pdf`);
   };
   return (
     <div className="jspdf__container">
