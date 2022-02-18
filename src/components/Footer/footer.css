@@ -1,7 +1,9 @@
 .footer-container {
-    bottom: 0px;
+    bottom: 0;
     background-color: dimgray;
     margin: 0px;
+    position: fixed;
+    width: 100vw;
 }
 .footer-container__inner {
     display: flex;
